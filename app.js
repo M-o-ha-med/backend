@@ -7,6 +7,13 @@ const adminRoutes = require('./routes/admin');
 const app = express();
 const path = require('path');
 
+const cors  = require('cors');
+const corsOptions = {
+	origin :["https://bobohotel.netlify.app"],
+	methods: 'GET,POST,PATCH,DELETE',            // Allow only GET and POST methods
+    allowedHeaders: ['Content-Type','Authorization'], // Allow specific headers
+    credentials: true   
+};
 
 require('dotenv').config()
 // Middleware
