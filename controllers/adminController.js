@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('../database/db');
 
 // Menghapus Hotel oleh admin
 exports.deleteHotel = async (req, res) => {
