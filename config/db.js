@@ -1,10 +1,10 @@
 var mysql = require("mysql");
 
-var hostname = "127.0.0.1";
-var database = "projectPAW";
-var port = "3306";
-var username = "root";
-var password = "";
+var hostname = process.env.DB_HOST;
+var database = process.env.DB_USER;
+var port = process.env.DB_PORT;
+var username = process.env.DB_USER;
+var password = process.env.DB_PASSWORD;
 
 var con = mysql.createConnection({
   host: hostname,
