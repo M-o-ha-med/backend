@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('../database/db');
 
 //create booking for user
 exports.createBooking =async  (req, res) => {
