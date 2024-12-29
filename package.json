@@ -120,9 +120,6 @@
     "webidl-conversions": "^7.0.0",
     "whatwg-url": "^13.0.0"
   },
-  "scripts": {
-    "start": "node app.js"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC"
