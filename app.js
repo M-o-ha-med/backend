@@ -3,7 +3,7 @@ const hotelRoutes = require('./routes/hotel');
 const userRoutes = require('./routes/user');
 const bookingRoutes = require('./routes/booking');
 const adminRoutes = require('./routes/admin');
-const offerRoutes = require('./routes/offer');
+
 const app = express();
 const path = require('path');
 
@@ -19,7 +19,7 @@ app.use('/api/hotel', hotelRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/admin', adminRoutes);
-app.use('/api/offers', offerRoutes);
+
 
 
 // Start Server
