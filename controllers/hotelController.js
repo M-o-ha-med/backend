@@ -1,7 +1,7 @@
 const db = require('../database/db');
 
 exports.getHotels = (req, res) => {
-    db.con.query("SELECT * from Hotels" , (err,data) => {
+    db.con.query("SELECT * from hotels" , (err,data) => {
 	if (err) console.log(err)
 	res.json(data);
 })	
