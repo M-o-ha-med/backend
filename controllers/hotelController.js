@@ -24,7 +24,7 @@ exports.getHotelsFromSearchBar = (req,res) => {
 
 
 exports.getHotelDetails = (req, res) => {
-	db.con.query("SELECT * from Hotels WHERE hotelID = (?) limit 1" , [req.params.id] , (err,data) => {
+	db.con.query("SELECT * from hotels WHERE hotelID = (?) limit 1" , [req.params.id] , (err,data) => {
 		if (err) console.log(err);
 		res.json(data);
 })	
