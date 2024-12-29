@@ -1,7 +1,7 @@
 const express = require('express');
 const { authenticateToken, isAdmin } = require('../middleware/authMiddleware');
 const { addHotel, updateHotel, deleteHotel } = require('../controllers/adminController');
-const upload = require('../config/imageUpload');
+const upload = require('../database/imageUpload');
 const router = express.Router();
 
 router.post('/hotels', upload.single('photo'),authenticateToken, isAdmin, addHotel);
