@@ -2,7 +2,7 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');        // Mengimpor bcrypt untuk enkripsi password
 const jwt = require('jsonwebtoken');     // Mengimpor jsonwebtoken untuk membuat token
 const User = require('../models/user');  // Mengimpor model User
-const db = require('../config/db');		 // Mengimpor database
+const db = require('../database/db');		 // Mengimpor database
 const sessionStorage = require('sessionstorage');
 
 
