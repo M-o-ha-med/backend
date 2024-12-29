@@ -15,6 +15,7 @@ const corsOptions = {
     credentials: true   
 };
 
+app.use(cors(corsOptions));
 require('dotenv').config()
 // Middleware
 app.use(express.json());
