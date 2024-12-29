@@ -1,4 +1,4 @@
-const db = require('../config/db');
+const db = require('../database/db');
 
 exports.getHotels = (req, res) => {
     db.con.query("SELECT * from Hotels" , (err,data) => {
