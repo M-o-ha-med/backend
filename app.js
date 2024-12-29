@@ -7,15 +7,9 @@ const offerRoutes = require('./routes/offer');
 const db = require('./config/db');
 const app = express();
 const path = require('path');
-const cors  = require('cors');
-const corsOptions = {
-	origin :["http://localhost:5173"],
-	methods: 'GET,POST,PATCH,DELETE',            // Allow only GET and POST methods
-    allowedHeaders: ['Content-Type','Authorization'], // Allow specific headers
-    credentials: true   
-	};
 
 
+require('dotenv').config()
 // Middleware
 app.use(express.json());
 app.use('/Images', express.static(path.join(__dirname, 'Images')));
