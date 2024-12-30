@@ -38,7 +38,6 @@ const imageKitStorage = {
                 {
                     file: fileBuffer, // File as a Buffer
                     fileName: `${Date.now()}-${file.originalname}`, // Unique file name
-                    folder: '/uploads/', // Optional: Specify folder
                 },
                 (err, result) => {
                     if (err) {
