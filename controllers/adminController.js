@@ -22,7 +22,9 @@ exports.deleteHotel = async (req, res) => {
 //Menambahkan Hotel oleh Admin
 exports.addHotel = async (req, res) => {
   const { namaHotel, deskripsi, regionID , alamatHotel } = req.body;
-  const photo = req.file ? req.file.filename : null; // Nama file gambar
+  req.file.filename = req.namaHotel ? req.namaHotel : req.file.filename;
+  const photo = req.file.filename;
+
 
   try {
     const inputData = await new Promise((resolve, reject) => {
