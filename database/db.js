@@ -1,10 +1,10 @@
 var mysql = require("mysql");
 
-var hostname = "gg-d5.h.filess.io";
-var database = "BOBODB_showcareit";
-var port = "3307";
-var username = "BOBODB_showcareit";
-var password = "9551537df099705f889782ac88c02816767cf323";
+var hostname = process.env.DB_HOST;
+var database = process.env.DB_NAME;
+var port = process.env.DB_PORT;
+var username = process.env.DB_USER;
+var password = process.env.DB_PASSWORD;
 
 var con = mysql.createConnection({
   host: hostname,
