@@ -46,7 +46,7 @@ exports.addHotel = async (req, res) => {
 
 exports.updateHotel = async (req, res) => {
   const { namaHotel, deskripsi, regionID , alamatHotel } = req.body;
-  const photo = req.file ? req.file.filename : null; // Nama file gambar
+  const photo = req.file && req.file.path ? req.file.path : null;
   const hotelID = req.params.id;
 
   try {
