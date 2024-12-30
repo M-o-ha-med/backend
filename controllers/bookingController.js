@@ -15,14 +15,29 @@ exports.createBooking =async  (req, res) => {
 
 //confirm users booking
 exports.confirmBooking = async (req, res) => {
-	const bookingID = req.params.id;
-	console.log(req.params.id);
-	db.con.query("UPDATE bookings SET isConfirmed=1 WHERE bookingID=?",[bookingID],(err,data)=>{
-		if(err) console.log(err);
-		
-	});
-    res.json({ message: "Booking confirmed successfully", bookingId: req.params.id });
+    const bookingID = parseInt(req.params.id, 10);
+
+    if (isNaN(bookingID)) {
+        return res.status(400).json({ error: "Invalid booking ID" });
+    }
+
+    db.con.query(
+        "UPDATE bookings SET isConfirmed = 1 WHERE bookingID = ?",
+        [bookingID],
+        (err, data) => {
+            if (err) {
+                console.error("Database error:", err);
+                return res.status(500).json({ error: "Failed to confirm booking" });
+            }
+
+            if (data.affectedRows === 0) {
+                return res.status(404).json({ error: "Booking not found" });
+            }
+            res.json({ message: "Booking confirmed successfully", bookingId: bookingID });
+        }
+    );
 };
+
 
 //read user's booking
 exports.getBooking = async (req, res) => {
