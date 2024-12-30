@@ -14,7 +14,7 @@ exports.createBooking =async  (req, res) => {
 };
 
 //confirm users booking
-exports.confirmBooking = (req, res) => {
+exports.confirmBooking = async (req, res) => {
 	const bookingID = req.params.id;
 	console.log(req.params.id);
 	db.con.query("UPDATE bookings SET isConfirmed=1 WHERE bookingID=?",[bookingID],(err,data)=>{
