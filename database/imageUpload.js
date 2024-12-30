@@ -3,9 +3,9 @@ const path = require('path');
 const ImageKit = require('imagekit');
 
 const imagekit = new ImageKit({
-    publicKey: "public_/xWguRgr/lqXza2RBwcyfjamiDA=",
-    privateKey: "private_a5QlIcpUFcUC8bXkAwKlJPTkQPs=",
-    urlEndpoint: "https://ik.imagekit.io/lfdf7rfwx/",
+    publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
+    privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
+    urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT,
 });
 
 
