@@ -19,7 +19,7 @@ app.use(cors(corsOptions));
 require('dotenv').config()
 // Middleware
 app.use(express.json());
-app.use('/Images', express.static(path.join(__dirname, 'Images')));
+
 
 
 // Routes
